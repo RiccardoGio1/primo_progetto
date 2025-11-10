@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi siamo</title>
-</head>
-<body>
-    <h1>CHI SIAMO</h1>
-    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-</body>
-</html>
+{% extends "base.html"%}
+{%block title%} {{block.super}} | Chi siamo {%endblock title%}
+{%block content%}
+<h1>CHI SIAMO</h1>
+<p>Pellentesque habitant morbi tristique senectus
+     et netus et malesuada fames ac turpis egestas.</p>
+{%endblock content%}

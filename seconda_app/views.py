@@ -18,3 +18,14 @@ def es_for(request):
 
     }
     return render(request,"es_for.html",context)
+
+def index(request):
+    return render(request,"index2.html")
+
+def es_if_else_elif(request):
+    context = {
+    'varl':100,
+    'var2':100.0,
+    'var3':100.50,
+    }
+    return render(request, "es_if_else_elif.html", context)
