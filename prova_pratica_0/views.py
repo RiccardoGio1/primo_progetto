@@ -29,4 +29,4 @@ def media(request):
         'list2': [1,2,3,4,5,6,7,8,9,10],
         'media':media
     }
-    return render(request,"prova_pratica_0/media.html ",context)
+    return render(request,"prova_pratica_0/media.html",context)
