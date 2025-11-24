@@ -1,0 +1,14 @@
+{% extends "base.html"%}
+{%block title%} {{block.super}} | Media {%endblock title%}
+{%block content%}
+    <h1>Media:</h1>
+    <h7>Lista:</h7>
+    {% for x in list2 %}
+            <i></i>{{x}}
+    {% endfor %}
+    <br/>
+    <b>Media = {{media}}</b> <br/>
+
+
+{%endblock content%}
+
