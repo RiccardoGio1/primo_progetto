@@ -34,12 +34,14 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'prima_app',
     'prova_pratica_0',
+    'news',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
 ]
 
 MIDDLEWARE = [
@@ -61,6 +63,8 @@ TEMPLATES = [
                 os.path.join(BASE_DIR, 'templates'),
                 os.path.join(BASE_DIR, 'seconda_app/templates/seconda_app'),
                 os.path.join(BASE_DIR, 'prova_pratica_0/templates/prova_pratica_0'),
+                os.path.join(BASE_DIR, 'news/templates')
+                
                 ],
         'APP_DIRS': True,
         'OPTIONS': {
