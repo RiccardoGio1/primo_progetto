@@ -21,6 +21,9 @@ def articoloDetailView(request, pk):
     context = {"articolo": articolo}
     return render (request, "news/articolo_detail.html", context)
 
+def index4(request):
+    return render(request,"news/index4.html")
+
 """
 def home (request):
     a = []
