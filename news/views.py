@@ -24,6 +24,13 @@ def articoloDetailView(request, pk):
 def index4(request):
     return render(request,"news/index4.html")
 
+def listaArticoli(request, pk):
+    articoli = Articolo.objects.filter(giornalista_id=pk)
+    context= {
+        'articoli': articoli,
+    }
+    return render(request, "news/lista_articoli.html", context)
+
 """
 def home (request):
     a = []
