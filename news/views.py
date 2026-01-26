@@ -1,6 +1,7 @@
 from django.shortcuts import render,get_object_or_404
 from django.http import HttpResponse
 from .models import Articolo, Giornalista
+import datetime
 
 # Create your views here.
 def home(request):
@@ -80,17 +81,19 @@ Nome
 def queryBase(request):
     #1. Tutti gli articoli scritti da giornalisti di un certo cognome:
     articoli_cognome = Articolo.objects.filter(giornalista__cognome="Rossi")
+    
     #2. Totale
     numero_totale_articoli= Articolo.objects.count()
     
     #3. Contare il numero di articoli scritti da un giornalista specifico:
-    giornalista_1 = Giornalista.objects.get(id=1)
+    giornalista_1 = Giornalista.objects.get(id=2)
+    numero_articoli_giornalista_1 = Articolo.objects.filter(giornalista=giornalista_1).count()
     
     #4. Ordinare gli articoli per un numero di visualiazioni in ordine crescente
     articoli_ordinati = Articolo.objects.order_by('-visualizzazioni')
     
     #5. Tutti gli articoli che non hanno visualizzazioni:
-    articoli_senza_visualizzazioni = Articolo.objects.filter(viusalizzazioni=0)
+    articoli_senza_visualizzazioni = Articolo.objects.filter(visualizzazioni=0)
     
     #6. Articolo più visualizzato
     articolo_piu_visualizzato = Articolo.objects.order_by('-visualizzazioni').first()
@@ -124,23 +127,23 @@ def queryBase(request):
     articoli_parola = Articolo.objects.filter(titolo__icontains='importante')
     
     # Creare il dizionario context
-    context= {
-        'articoli_cognome' : articoli_cognome,
-        'numero_totale_articoli' : numero_totale_articoli,
-        'giornalista_1'  : giornalista_1,
-        'articoli_ordinati'  : articoli_ordinati,
-        'articoli_senza_visualizzazioni' : articoli_senza_visualizzazioni,
-        'articolo_piu_visualizzato ' : articolo_piu_visualizzato,
-        'giornalisti_data ' : giornalisti_data,
-        'articoli_del_giorno ' : articoli_del_giorno,
-        'articoli_periodo' : articoli_periodo,
-        'articoli_giornalisti' : articoli_giornalisti,
-        'giornalista_giovane' : giornalista_giovane,
-        'giornalista_anziano ':giornalista_anziano,
-        'ultimi' : ultimi,
-        'articoli_mimime_visualizzazioni' : articoli_mimime_visualizzazioni,
-        'articoli_parola' : articoli_parola
-        
+    context = {
+    'articoli_cognome': articoli_cognome,
+    'numero_totale_articoli': numero_totale_articoli,
+    'giornalista_1': giornalista_1,
+    'numero_articoli_giornalista_1': numero_articoli_giornalista_1,
+    'articoli_ordinati': articoli_ordinati,
+    'articoli_senza_visualizzazioni': articoli_senza_visualizzazioni,
+    'articolo_piu_visualizzato': articolo_piu_visualizzato,
+    'giornalisti_data': giornalisti_data,
+    'articoli_del_giorno': articoli_del_giorno,
+    'articoli_periodo': articoli_periodo,
+    'articoli_giornalisti': articoli_giornalisti,
+    'giornalista_giovane': giornalista_giovane,
+    'giornalista_anziano': giornalista_anziano,
+    'ultimi': ultimi,
+    'articoli_mimime_visualizzazioni': articoli_mimime_visualizzazioni,
+    'articoli_parola': articoli_parola,
     }
-    
-    
+
+    return render(request, 'news/query_base.html', context)
