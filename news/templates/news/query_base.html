@@ -133,5 +133,59 @@ Query Base
 {% empty %}
     <p>Nessun articolo</p>
 {% endfor %}
-
+<hr>
+<h2>16. Articoli Pubblicati a Gennaio 2023</h2>
+    <ul>
+        {% for articolo in articoli_mese_anno %}
+            <li>{{ articolo.titolo }} - {{ articolo.data }}</li>
+        {% empty %}
+            <li>Nessun articolo trovato per gennaio 2023.</li>
+        {% endfor %}
+    </ul>
+<hr>
+<h2>17. Giornalisti con Articoli Popolari</h2>
+    <ul>
+        {% for giornalista in giornalisti_con_articoli_popolari %}
+            <li>{{ giornalista.nome }}</li>
+        {% empty %}
+            <li>Nessun giornalista con articoli popolari.</li>
+        {% endfor %}
+    </ul>
+<hr>
+<h2>18. Articoli con Più di 50 Visualizzazioni e Giornalisti Nati Dopo il 1 Gennaio 1990</h2>
+    <ul>
+        {% for articolo in articoli_con_and %}
+            <li>{{ articolo.titolo }} - Visualizzazioni: {{ articolo.visualizzazioni }}</li>
+        {% empty %}
+            <li>Nessun articolo trovato per le condizioni specificate.</li>
+        {% endfor %}
+    </ul>
+<hr>
+<h2>19. Articoli con Condizioni OR (Giornalista Nato Dopo il 1990 o Meno di 50 Visualizzazioni)</h2>
+    <ul>
+        {% for articolo in articoli_con_or %}
+            <li>{{ articolo.titolo }} - Visualizzazioni: {{ articolo.visualizzazioni }}</li>
+        {% empty %}
+            <li>Nessun articolo trovato per le condizioni specificate.</li>
+        {% endfor %}
+    </ul>
+<hr>
+<h2>20. Articoli con Giornalisti Non Nati Prima del 1 Gennaio 1990</h2>
+    <ul>
+        {% for articolo in articoli_con_not %}
+            <li>{{ articolo.titolo }} - Giornalista: {{ articolo.giornalista.nome }}</li>
+        {% empty %}
+            <li>Nessun articolo trovato per le condizioni specificate.</li>
+        {% endfor %}
+    </ul>
+<hr>
+ <h2>21.Articoli Escludendo i Giornalisti Nati Prima del 1 Gennaio 1990</h2>
+    <ul>
+        {% for articolo in articoli_con_not_exclude %}
+            <li>{{ articolo.titolo }} - Giornalista: {{ articolo.giornalista.nome }}</li>
+        {% empty %}
+            <li>Nessun articolo trovato per le condizioni specificate.</li>
+        {% endfor %}
+    </ul>
+<hr>
 {% endblock %}
