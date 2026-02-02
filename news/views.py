@@ -195,7 +195,7 @@ def queryBase(request):
 
 def giornalistaDetailView(request, pk):
     giornalista = get_object_or_404(Giornalista, pk=pk)
-    articoli = giornalista.articoli.all()  # 'articoli' è il related_name della FK nel modello Articolo
+    articoli = giornalista.articoli.all()  
 
     context = {
         'giornalista': giornalista,

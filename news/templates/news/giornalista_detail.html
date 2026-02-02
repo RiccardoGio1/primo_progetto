@@ -5,9 +5,10 @@
 
 {% block content %}
      <h2>Dettagli del giornalista:</h2>
-    <p>Nome: {{ giornalista.cognome }} {{ giornalista.nome }}</p>
-
-    <h3>Tutti i suoi articoli e visualizzazioni</h3>
+    <h2>Nome:</h2> <p>{{ giornalista.cognome }} {{ giornalista.nome }} </p>
+    <h2>Nato il </h2> <p>{{giornalista.anno_di_nascita}}</p>
+  
+    <h4>Tutti i suoi articoli e visualizzazioni</h4>
 
     <ul>
     {% for articolo in articoli %}
