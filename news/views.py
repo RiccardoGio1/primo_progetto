@@ -52,8 +52,7 @@ Questa funzione stampa:
 ['primo articolo!', 'Secondo articolo!']
 ['Guido', 'Mario', 'Nome']
 """
-
-
+    
 """
 def home(request):
     a=""
@@ -193,3 +192,13 @@ def queryBase(request):
     }
 
     return render(request, 'news/query_base.html', context)
+
+def giornalistaDetailView(request, pk):
+    giornalista = get_object_or_404(Giornalista, pk=pk)
+    articoli = giornalista.articoli.all()  # 'articoli' è il related_name della FK nel modello Articolo
+
+    context = {
+        'giornalista': giornalista,
+        'articoli': articoli,
+    }
+    return render(request, 'news/giornalista_detail.html', context)
