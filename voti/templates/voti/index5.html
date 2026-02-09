@@ -1,0 +1,11 @@
+{% extends "base.html"%}
+{%block title%} {{block.super}} | Index4 {%endblock title%}
+{%block content%}
+<ol>
+    <li><a href="{% url 'voti:materie'%}">View_A</a></li>
+    <li><a href="{% url 'voti:StudentiConVoto'%}">View_B</a></li>
+    <li><a href="{% url 'voti:media_studenti'%}">View_C</a></li>
+    <li><a href="{% url 'voti:Max_Min'%}">View_D</a></li>
+    <li><a href="/">Torna all'index principale</a></li>
+</ol>
+{%endblock content%}

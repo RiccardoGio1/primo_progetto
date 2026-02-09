@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Voti Studenti{% endblock %}
+
+{% block content %}
+<h2>Voti Studenti</h2>
+
+{% for studente, materie in voti.items %}
+    <h3>{{ studente }}</h3>
+    <ul>
+        {% for materia, voto, assenze in materie %}
+            <li>{{ materia }} - Voto: {{ voto }} - Assenze: {{ assenze }}</li>
+        {% endfor %}
+    </ul>
+{% endfor %}
+
+{% endblock %}

@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'prima_app',
     'prova_pratica_0',
     'news',
+    'voti',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
