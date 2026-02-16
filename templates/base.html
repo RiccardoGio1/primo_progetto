@@ -53,6 +53,28 @@
             </div>
           </li>
 
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            News
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{% url 'news:homepage'%}">Homepage</a>
+            <a class="dropdown-item"href="{% url 'news:lista_articoli'%}">Lista Articoli</a>
+            <a class="dropdown-item"href="{% url 'news:query_base'%}">Query Base</a>
+            </div>
+          </li>
+
+      <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Voti
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{% url 'voti:materie'%}">View_A</a>
+              <a class="dropdown-item" href="{% url 'voti:StudentiConVoto'%}">View_B</a>
+              <a class="dropdown-item" href="{% url 'voti:media_studenti'%}">View_C</a>
+              <a class="dropdown-item" href="{% url 'voti:Max_Min'%}">View_D</a>
+            </div>
+          </li>
         </ul>
       </div>
 
