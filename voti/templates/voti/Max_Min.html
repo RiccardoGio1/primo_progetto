@@ -1,22 +1,26 @@
 {% extends "base.html" %}
 
-{% block title %}Voti Massimo e Minimo{% endblock %}
+{% block title %}Voti Massimi e minimi{% endblock %}
 
 {% block content %}
-<h2>Voti Massimo e Minimo</h2>
-
-<h3>Voto Massimo: {{ massimo }}</h3>
-<ul>
-    {% for studente, materia in studenti_massimo %}
-        <li>{{ studente }} - {{ materia }}</li>
+    
+    <ul>
+    <h4>Voto minimo: {{ max }}</h4>
+    {% for studente_max , materie_max in studenti_max%}
+        <li>{{ studente_max }} - {{ materie_max }}</li>
     {% endfor %}
-</ul>
+    </ul>
 
-<h3>Voto Minimo: {{ minimo }}</h3>
-<ul>
-    {% for studente, materia in studenti_minimo %}
-        <li>{{ studente }} - {{ materia }}</li>
+    <ul>
+    <h4>Voto minimo: {{ min }}</h4>
+    {% for studente_min , materie_min in studenti_min%}
+        <li>{{ studente_min }} - {{ materie_min }}</li>
     {% endfor %}
-</ul>
-
+    </ul>
 {% endblock %}
+
+
+
+
+
+
