@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .forms import FormContatto
 from django.http import HttpResponse
+from .models import Contatto
 # Create your views here.
 
 """
@@ -44,4 +45,7 @@ def contatti(request):
     #arriviamo a questo punto, se si tratta della prima volta che la pagina viene richesta (con metodo GET), o se il form non è valido e ha errori
     context={"form":form}
     return render(request, "contatto.html",context)
-        
+
+def lista_contatti(request):
+    contatti = Contatto.objects.all()
+    return render(request, "lista_contatti.html", {"contatti": contatti})
