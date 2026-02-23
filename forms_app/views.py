@@ -26,6 +26,13 @@ def contatti(request):
             print("COGNOME: ",form.cleaned_data["cognome"])
             print("EMAIL: ",form.cleaned_data["email"])
             print("CONTENUTO: ",form.cleaned_data["contenuto"])
+            print("Salvo il contatto nel database")
+            nuovo_contatto = form.save()
+            print("new_post: ", nuovo_contatto)
+            print(nuovo_contatto.nome)
+            print(nuovo_contatto.cognome)
+            print(nuovo_contatto.email)
+            print(nuovo_contatto.contenuto)
             
         #ringrazio l'utente per averci contattato, volendo si può effettuare un redirect a una pagina specifica
         return HttpResponse("<h1>Grazie per averci contattato</h1>")
