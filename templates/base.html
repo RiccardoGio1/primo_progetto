@@ -84,14 +84,10 @@
             <a class="dropdown-item" href="{% url 'forms_app:contatti'%}">Contatto</a>
             <a class="dropdown-item" href="{% url 'forms_app:lista_Contatti'%}">Lista Contatti</a>
             </div>
-          </li>
-        </ul>
-      </div>
+      </li>
+      
 
-    
-    </nav>
-
-    {% if request.user.is_authenticated %}
+      {% if request.user.is_authenticated %}
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -110,6 +106,11 @@
         <a class="nav-link" href="{% url 'login' %}">Login</a>
       </li>
     {% endif %}
+
+    
+    </nav>
+
+    
 
   <div class="container my-4">
     <!--Per inserire i contenuti della pagina-->

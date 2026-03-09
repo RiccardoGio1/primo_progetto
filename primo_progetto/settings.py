@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'voti',
     'forms_app',
     'crispy_forms',
+    'accounts',
     'crispy_bootstrap4',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -140,3 +141,4 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
 LOGIN_REDIRECT_URL = '/'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+LOGOUT_REDIRECT_URL='/'
